@@ -1,0 +1,93 @@
+---
+title: "Does the Maturity Level of a Form of Media Influence Audience Ratings?"
+author: "Nikola Plavsic, Ivan Torres, Scarlett Nguyen"
+date: 11/12/2026
+format: 
+  html:
+    embed-resources: true
+---
+
+
+```{r}
+library(dplyr)
+library(stringr)
+
+TitlesIMDB <-read.csv("titles_cleaned.csv")
+NetflixData <- read.csv("netflix_titles.csv")
+```
+
+# Providing Data Context
+### First Data-Set:
+Our first data-set is called "Netflix Movies & TV Shows". It was created by Shivam Bansal and uploaded to Kaggle.com on September 26th, 2021. While the documentation does not provide a method of collection for this data, this specific data set has been widely used within the Kaggle community and has been noted for its reliability. Further analysis of this data set shows that it has been used for learning & research purposes, with it being highly rated for its documentation and cleanliness of the data. The data in this data-set represents all existing Movies and TV shows available on Netflix as of September 2021. It also shows Maturity ratings on all media available and the ratings by the audience. Our main focus is to join the Titles and Audience Ratings between the two data-sets and compare them to see if there is a trend between the two. Considering these are two different data-sets with different authors, we may need to clean the data before we can mutate them together to ensure accuracy in our counts. 
+
+Using glimpse we can see an overview of the data:
+```{r}
+glimpse("netflix_titles.csv")
+```
+
+As shown by glimpse, we can see that the data is grouped by "title", "rating". 
+There are no issues observed within the data that would make this data-set invalid.
+
+### Second Data-Set:
+
+# Our Joined Data-Set
+
+
+```{r}
+library(dplyr)
+library(stringr)
+
+TitlesIMDB <-read.csv("titles_cleaned.csv")
+NetflixData <- read.csv("netflix_titles.csv")
+
+glimpse(TitlesIMDB)
+glimpse(NetflixData)
+
+joined_by_title <- inner_join(
+    NetflixData, 
+    TitlesIMDB,
+    by = c("title" = "title")
+             )
+glimpse(joined_by_title)
+```
+
+```{r}
+
+
+TitlesIMDB <-read.csv("titles_cleaned.csv")
+NetflixData <- read.csv("netflix_titles.csv")
+
+joined_by_title <- inner_join(
+  NetflixData,
+  TitlesIMDB,
+  by = c("title" = "title")
+)
+glimpse(joined_by_title)
+
+```
+
+
+
+# Data Wrangling:
+
+
+
+# Group Information
+
+## Nikola Plavsic
+
+## Ivan Torres
+
+## Scarlett Nguyen
+
+
+### Coding Notes
+
+
+
+
+
+
+
+
+
